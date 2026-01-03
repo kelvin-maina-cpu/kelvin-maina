@@ -1,6 +1,14 @@
 /* ================= GLOBAL STATE ================= */
 
 // Projects with images
+// Preload demo user if none exists
+if (!localStorage.getItem("users")) {
+  const demoUsers = [
+    { username: "demo", admission: "123", email: "demo@example.com", password: "demo123" }
+  ];
+  localStorage.setItem("users", JSON.stringify(demoUsers));
+}
+
 const projects = [
   { 
     name: "Web-Based Organizational Support System",
